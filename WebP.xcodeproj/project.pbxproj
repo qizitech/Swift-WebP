@@ -14,6 +14,9 @@
 		3B91974D22F2D1DA00A86FE0 /* demux.h in Headers */ = {isa = PBXBuildFile; fileRef = BDCC9BE91E42407800D914B4 /* demux.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3B91974E22F2D1E300A86FE0 /* mux.h in Headers */ = {isa = PBXBuildFile; fileRef = BDCC9BEC1E42407800D914B4 /* mux.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3B91974F22F2D46400A86FE0 /* mux_types.h in Headers */ = {isa = PBXBuildFile; fileRef = BDCC9BED1E42407800D914B4 /* mux_types.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3B91975122F2D76A00A86FE0 /* anim_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9BC21E42407800D914B4 /* anim_encode.c */; };
+		3B91975222F2D79500A86FE0 /* anim_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B511E42407700D914B4 /* anim_decode.c */; };
+		3B91975322F2D7A600A86FE0 /* demux.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B521E42407700D914B4 /* demux.c */; };
 		BD3B123E1E47752800E04471 /* WebPEncoderMacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B12331E4768C100E04471 /* WebPEncoderMacOSTests.swift */; };
 		BD3B123F1E47752E00E04471 /* WebPEncoderMacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B12331E4768C100E04471 /* WebPEncoderMacOSTests.swift */; };
 		BD3B127C1E478B3300E04471 /* decode.h in Headers */ = {isa = PBXBuildFile; fileRef = BDCC9BE81E42407800D914B4 /* decode.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -1410,6 +1413,9 @@
 				FD8F554B2177FDF500322BA2 /* WebPEncoder+Platform.swift in Sources */,
 				FD8F55512177FDF500322BA2 /* WebPEncoder.swift in Sources */,
 				3B3921A222F2993700391732 /* cost_neon.c in Sources */,
+				3B91975122F2D76A00A86FE0 /* anim_encode.c in Sources */,
+				3B91975222F2D79500A86FE0 /* anim_decode.c in Sources */,
+				3B91975322F2D7A600A86FE0 /* demux.c in Sources */,
 				FD8F554C2177FDF500322BA2 /* WebPEncoderConfig.swift in Sources */,
 				FD8F554F2177FDF500322BA2 /* InternalRawRepresentable.swift in Sources */,
 			);
