@@ -42,11 +42,23 @@ import Foundation
         
         private func convertUIImageToCGImageWithRGBA(_ image: UIImage) -> CGImage {
             
-            let renderer = UIGraphicsImageRenderer(size: image.size)
-            
-            return renderer.image { (context) in
-                image.draw(in: CGRect(origin: .zero, size: size))
-            }.cgImage!
+            if #available(iOS 10.0, *) {
+                let renderer = UIGraphicsImageRenderer(size: image.size)
+                return renderer.image { (context) in
+                    image.draw(in: CGRect(origin: .zero, size: image.size))
+                    }.cgImage!
+            } else {
+                // Fallback on earlier versions
+                let colorSpace = CGColorSpaceCreateDeviceRGB()
+                let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
+                let context = CGContext(data: nil, width: Int(image.size.width), height: Int(image.size.height),
+                                        bitsPerComponent: 8, bytesPerRow: Int(image.size.width) * 4,
+                                        space: colorSpace, bitmapInfo: bitmapInfo.rawValue)!
+                let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+                context.draw(image.cgImage!, in: rect)
+                
+                return context.makeImage()!
+            }
         }
     }
 

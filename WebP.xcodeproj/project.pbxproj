@@ -53,7 +53,6 @@
 		BDCC9EE41E4244B900D914B4 /* dec_sse2.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B6B1E42407700D914B4 /* dec_sse2.c */; };
 		BDCC9EE51E4244B900D914B4 /* dec_sse41.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B6C1E42407700D914B4 /* dec_sse41.c */; };
 		BDCC9EE61E4244B900D914B4 /* enc.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B6E1E42407700D914B4 /* enc.c */; };
-		BDCC9EE71E4244B900D914B4 /* enc_avx2.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B6F1E42407700D914B4 /* enc_avx2.c */; };
 		BDCC9EE81E4244B900D914B4 /* enc_mips32.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B701E42407700D914B4 /* enc_mips32.c */; };
 		BDCC9EE91E4244B900D914B4 /* enc_mips_dsp_r2.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B711E42407700D914B4 /* enc_mips_dsp_r2.c */; };
 		BDCC9EEA1E4244B900D914B4 /* enc_msa.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B721E42407700D914B4 /* enc_msa.c */; };
@@ -167,7 +166,6 @@
 		BDCC9F691E4246B900D914B4 /* dec_sse2.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B6B1E42407700D914B4 /* dec_sse2.c */; };
 		BDCC9F6A1E4246B900D914B4 /* dec_sse41.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B6C1E42407700D914B4 /* dec_sse41.c */; };
 		BDCC9F6B1E4246B900D914B4 /* enc.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B6E1E42407700D914B4 /* enc.c */; };
-		BDCC9F6C1E4246B900D914B4 /* enc_avx2.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B6F1E42407700D914B4 /* enc_avx2.c */; };
 		BDCC9F6D1E4246B900D914B4 /* enc_mips32.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B701E42407700D914B4 /* enc_mips32.c */; };
 		BDCC9F6E1E4246B900D914B4 /* enc_mips_dsp_r2.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B711E42407700D914B4 /* enc_mips_dsp_r2.c */; };
 		BDCC9F6F1E4246B900D914B4 /* enc_msa.c in Sources */ = {isa = PBXBuildFile; fileRef = BDCC9B721E42407700D914B4 /* enc_msa.c */; };
@@ -390,7 +388,6 @@
 		BDCC9B6C1E42407700D914B4 /* dec_sse41.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dec_sse41.c; sourceTree = "<group>"; };
 		BDCC9B6D1E42407700D914B4 /* dsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dsp.h; sourceTree = "<group>"; };
 		BDCC9B6E1E42407700D914B4 /* enc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = enc.c; sourceTree = "<group>"; };
-		BDCC9B6F1E42407700D914B4 /* enc_avx2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = enc_avx2.c; sourceTree = "<group>"; };
 		BDCC9B701E42407700D914B4 /* enc_mips32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = enc_mips32.c; sourceTree = "<group>"; };
 		BDCC9B711E42407700D914B4 /* enc_mips_dsp_r2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = enc_mips_dsp_r2.c; sourceTree = "<group>"; };
 		BDCC9B721E42407700D914B4 /* enc_msa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = enc_msa.c; sourceTree = "<group>"; };
@@ -682,7 +679,6 @@
 				BDCC9B6C1E42407700D914B4 /* dec_sse41.c */,
 				BDCC9B651E42407700D914B4 /* dec.c */,
 				BDCC9B6D1E42407700D914B4 /* dsp.h */,
-				BDCC9B6F1E42407700D914B4 /* enc_avx2.c */,
 				BDCC9B711E42407700D914B4 /* enc_mips_dsp_r2.c */,
 				BDCC9B701E42407700D914B4 /* enc_mips32.c */,
 				BDCC9B721E42407700D914B4 /* enc_msa.c */,
@@ -1208,7 +1204,6 @@
 				BDCC9F691E4246B900D914B4 /* dec_sse2.c in Sources */,
 				BDCC9F6A1E4246B900D914B4 /* dec_sse41.c in Sources */,
 				BDCC9F6B1E4246B900D914B4 /* enc.c in Sources */,
-				BDCC9F6C1E4246B900D914B4 /* enc_avx2.c in Sources */,
 				BDCC9F6D1E4246B900D914B4 /* enc_mips32.c in Sources */,
 				BDCC9F6E1E4246B900D914B4 /* enc_mips_dsp_r2.c in Sources */,
 				BDCC9F6F1E4246B900D914B4 /* enc_msa.c in Sources */,
@@ -1329,7 +1324,6 @@
 				BDCC9EE41E4244B900D914B4 /* dec_sse2.c in Sources */,
 				BDCC9EE51E4244B900D914B4 /* dec_sse41.c in Sources */,
 				BDCC9EE61E4244B900D914B4 /* enc.c in Sources */,
-				BDCC9EE71E4244B900D914B4 /* enc_avx2.c in Sources */,
 				BDCC9EE81E4244B900D914B4 /* enc_mips32.c in Sources */,
 				BDCC9EE91E4244B900D914B4 /* enc_mips_dsp_r2.c in Sources */,
 				BDCC9EEA1E4244B900D914B4 /* enc_msa.c in Sources */,
