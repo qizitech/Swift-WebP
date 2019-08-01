@@ -30,17 +30,29 @@ import Foundation
     import CoreGraphics
 
     extension WebPEncoder {
+        
+        enum WebPEncoderImageError:Error {
+            case failedToPrepare
+        }
         public func encode(_ image: UIImage, config: WebPEncoderConfig, width: Int = 0, height: Int = 0) throws -> Data {
-            let cgImage = convertUIImageToCGImageWithRGBA(image)
-            let stride = cgImage.bytesPerRow
-            let dataPtr = CFDataGetMutableBytePtr((cgImage.dataProvider!.data as! CFMutableData))!
-            let webPData = try encode(RGBA: dataPtr, config: config,
-                                      originWidth: Int(image.size.width), originHeight: Int(image.size.height), stride: stride,
-                                      resizeWidth: width, resizeHeight: height)
-            return webPData
+            if let cgImage = convertUIImageToCGImageWithRGBA(image) {
+                let stride = cgImage.bytesPerRow
+                let dataPtr = CFDataGetMutableBytePtr((cgImage.dataProvider!.data as! CFMutableData))!
+                let webPData = try encode(RGBA: dataPtr, config: config,
+                                          originWidth: Int(image.size.width), originHeight: Int(image.size.height), stride: stride,
+                                          resizeWidth: width, resizeHeight: height)
+                return webPData
+            }
+            else {
+                throw WebPEncoderImageError.failedToPrepare
+            }
         }
         
-        private func convertUIImageToCGImageWithRGBA(_ image: UIImage) -> CGImage {
+        private func convertUIImageToCGImageWithRGBA(_ image: UIImage) -> CGImage? {
+            
+            guard let cgImage = image.cgImage else {
+                return nil
+            }
             
             //Fix orientation if needed
             var transform: CGAffineTransform = .identity
@@ -50,30 +62,27 @@ import Foundation
             switch imageOrientation {
             case .down, .downMirrored:
                 transform = transform.translatedBy(x: size.width, y: size.height)
-                transform = transform.rotated(by:.pi)
-                break
+                transform = transform.rotated(by: .pi)
             case .left, .leftMirrored:
                 transform = transform.translatedBy(x: size.width, y: 0)
-                transform = transform.rotated(by:.pi/2)
-                break
+                transform = transform.rotated(by: .pi / 2.0)
             case .right, .rightMirrored:
                 transform = transform.translatedBy(x: 0, y: size.height)
-                transform = transform.rotated(by:-.pi/2)
-                break
+                transform = transform.rotated(by: .pi / -2.0)
             case .up, .upMirrored:
                 break
             @unknown default:
                 break
             }
             
+            // Flip image one more time if needed to, this is to prevent flipped image
             switch imageOrientation {
             case .upMirrored, .downMirrored:
-                transform.translatedBy(x: size.width, y: 0)
-                transform.scaledBy(x: -1, y: 1)
-                break
+                transform = transform.translatedBy(x: size.width, y: 0)
+                transform = transform.scaledBy(x: -1, y: 1)
             case .leftMirrored, .rightMirrored:
-                transform.translatedBy(x: size.height, y: 0)
-                transform.scaledBy(x: -1, y: 1)
+                transform = transform.translatedBy(x: size.height, y: 0)
+                transform = transform.scaledBy(x: -1, y: 1)
             case .up, .down, .left, .right:
                 break
             @unknown default:
@@ -87,21 +96,15 @@ import Foundation
                                     space: colorSpace, bitmapInfo: bitmapInfo.rawValue)!
             context.concatenate(transform)
             
-            let rect:CGRect
             switch imageOrientation {
             case .left, .leftMirrored, .right, .rightMirrored:
-                rect = CGRect(x: 0, y: 0, width: size.height, height: size.width)
-                
-                break
+                context.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.height, height: size.width))
             default:
-                rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+                context.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
                 break
             }
             
-            
-            context.draw(image.cgImage!, in: rect)
-            
-            return context.makeImage()!
+            return context.makeImage()
         }
     }
 
