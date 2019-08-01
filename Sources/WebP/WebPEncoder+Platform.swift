@@ -31,26 +31,28 @@ import Foundation
 
     extension WebPEncoder {
         public func encode(_ image: UIImage, config: WebPEncoderConfig, width: Int = 0, height: Int = 0) throws -> Data {
-            let cgImage = convertUIImageToCGImageWithRGBA(image)
-            let stride = cgImage.bytesPerRow
-            let dataPtr = CFDataGetMutableBytePtr((cgImage.dataProvider!.data as! CFMutableData))!
-            let webPData = try encode(RGBA: dataPtr, config: config,
-                                      originWidth: Int(image.size.width), originHeight: Int(image.size.height), stride: stride,
-                                      resizeWidth: width, resizeHeight: height)
-            return webPData
-        }
-        
-        private func convertUIImageToCGImageWithRGBA(_ image: UIImage) -> CGImage {
             
-            let colorSpace = CGColorSpaceCreateDeviceRGB()
-            let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
-            let context = CGContext(data: nil, width: Int(image.size.width), height: Int(image.size.height),
-                                    bitsPerComponent: 8, bytesPerRow: Int(image.size.width) * 4,
-                                    space: colorSpace, bitmapInfo: bitmapInfo.rawValue)!
-            let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-            context.draw(image.cgImage!, in: rect)
-            
-            return context.makeImage()!
+            if #available(iOS 11.0, *) {
+                let format = UIGraphicsImageRendererFormat.preferred()
+                format.scale = 1
+                let scaledSize = CGSize(width: image.size.width*image.scale, height: image.size.height*image.scale)
+                let renderer = UIGraphicsImageRenderer(size: scaledSize, format:format)
+                let scaledAndDecompressedImage = renderer.image { (context) in
+                    image.draw(in: CGRect(origin: .zero, size: scaledSize))
+                }
+                
+                let cgImage = scaledAndDecompressedImage.cgImage!
+                let stride = cgImage.bytesPerRow
+                let dataPtr = CFDataGetMutableBytePtr((cgImage.dataProvider!.data as! CFMutableData))!
+                
+                let webPData = try encode(RGBA: dataPtr, config: config,
+                                          originWidth: Int(scaledAndDecompressedImage.size.width),
+                                          originHeight: Int(scaledAndDecompressedImage.size.height), stride: stride)
+                return webPData
+            }
+            else {
+                return Data()
+            }
         }
     }
 

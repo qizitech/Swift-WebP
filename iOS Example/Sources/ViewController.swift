@@ -25,6 +25,13 @@ class IOSViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.didTapButton(self)
     }
 
     
@@ -33,29 +40,34 @@ class IOSViewController: UIViewController {
         if state == .processing { return }
         state = .processing
         let encoder = WebPEncoder()
-        let decoder = WebPDecoder()
-        let queue = DispatchQueue(label: "me.ainam.webp")
-        let image = beforeImageView.image!
-        queue.async {
-            do {
-                print("convert start")
-                let data = try! encoder.encode(image, config: .preset(.picture, quality: 95))
-                var options = WebPDecoderOptions()
-                options.scaledWidth = Int(image.size.width)
-                options.scaledHeight = Int(image.size.height)
-                let cgImage: CGImage = try decoder.decode(data, options: options)
-                let webpImage = UIImage(cgImage: cgImage)
-                print("decode finish")
-                DispatchQueue.main.async {
-                    self.afterImageView.image = webpImage
-                    self.state = .none
-                }
-            } catch let error {
-                self.state = .none
-                print(error)
-            }
+        
+        let image = #imageLiteral(resourceName: "testImage")
+        
+        do {
+            print("convert start")
+            let data = try! encoder.encode(image, config: .preset(.picture, quality: 85))
+            
+            let tmpURL = FileManager.default.documentsDirectory.appendingPathComponent("pic.webp")
+            print(tmpURL.path)
+            try data.write(to: tmpURL)
+            
+            let shareVC =  UIActivityViewController.init(activityItems: [tmpURL], applicationActivities: nil)
+            self.show(shareVC, sender: nil)
+            
+        } catch let error {
+            self.state = .none
+            print(error)
         }
     }
 
 }
 
+extension FileManager {
+    static var documentsDirectory: URL {
+        return `default`.urls(for: .documentDirectory, in: .userDomainMask).last!
+    }
+    
+    var documentsDirectory: URL {
+        return urls(for: .documentDirectory, in: .userDomainMask).last!
+    }
+}
