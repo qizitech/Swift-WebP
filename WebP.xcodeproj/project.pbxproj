@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3921A222F2993700391732 /* cost_neon.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B3921A122F2993700391732 /* cost_neon.c */; };
+		3B3921A322F2993700391732 /* cost_neon.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B3921A122F2993700391732 /* cost_neon.c */; };
+		3B3921A422F2993700391732 /* cost_neon.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B3921A122F2993700391732 /* cost_neon.c */; };
+		3B3921A522F2993700391732 /* cost_neon.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B3921A122F2993700391732 /* cost_neon.c */; };
 		BD3B123E1E47752800E04471 /* WebPEncoderMacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B12331E4768C100E04471 /* WebPEncoderMacOSTests.swift */; };
 		BD3B123F1E47752E00E04471 /* WebPEncoderMacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B12331E4768C100E04471 /* WebPEncoderMacOSTests.swift */; };
 		BD3B127C1E478B3300E04471 /* decode.h in Headers */ = {isa = PBXBuildFile; fileRef = BDCC9BE81E42407800D914B4 /* decode.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -340,6 +344,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B3921A122F2993700391732 /* cost_neon.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cost_neon.c; sourceTree = "<group>"; };
 		BD196F991DB2989600F7387E /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		BD3B12321E4768C100E04471 /* WebPEncoderIOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPEncoderIOSTests.swift; sourceTree = "<group>"; };
 		BD3B12331E4768C100E04471 /* WebPEncoderMacOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPEncoderMacOSTests.swift; sourceTree = "<group>"; };
@@ -668,6 +673,7 @@
 				BDCC9B621E42407700D914B4 /* cost_mips_dsp_r2.c */,
 				BDCC9B611E42407700D914B4 /* cost_mips32.c */,
 				BDCC9B631E42407700D914B4 /* cost_sse2.c */,
+				3B3921A122F2993700391732 /* cost_neon.c */,
 				BDCC9B601E42407700D914B4 /* cost.c */,
 				BDCC9B641E42407700D914B4 /* cpu.c */,
 				BDCC9B661E42407700D914B4 /* dec_clip_tables.c */,
@@ -1062,7 +1068,7 @@
 				TargetAttributes = {
 					BD5FC4CF1DB3EE2B000A0A38 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 					};
 					BD72CD2E1DD6FBDA00E865AB = {
@@ -1082,7 +1088,7 @@
 					};
 					D95E1BDC1D88D63300F94976 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 					};
 					D95E1BE51D88D63400F94976 = {
@@ -1149,6 +1155,7 @@
 				FD16BB2221E6F98500F80360 /* WebPDecoderConfig.swift in Sources */,
 				FD8F55582178029600322BA2 /* WebPEncoder.swift in Sources */,
 				FD16BB2021E6F97D00F80360 /* WebPDecoder.swift in Sources */,
+				3B3921A322F2993700391732 /* cost_neon.c in Sources */,
 				FD16BB2121E6F98100F80360 /* WebPDecoder+Platform.swift in Sources */,
 				FD8F55592178029600322BA2 /* WebPEncoder+Platform.swift in Sources */,
 				FD8F555A2178029600322BA2 /* WebPEncoderConfig.swift in Sources */,
@@ -1217,6 +1224,7 @@
 				BDCC9F771E4246B900D914B4 /* filters_sse2.c in Sources */,
 				BDCC9F781E4246B900D914B4 /* lossless.c in Sources */,
 				BDCC9F791E4246B900D914B4 /* lossless_enc.c in Sources */,
+				3B3921A522F2993700391732 /* cost_neon.c in Sources */,
 				BDCC9F7A1E4246B900D914B4 /* lossless_enc_mips32.c in Sources */,
 				BDCC9F7B1E4246B900D914B4 /* lossless_enc_mips_dsp_r2.c in Sources */,
 				BDCC9F7C1E4246B900D914B4 /* lossless_enc_msa.c in Sources */,
@@ -1337,6 +1345,7 @@
 				BDCC9EF21E4244B900D914B4 /* filters_sse2.c in Sources */,
 				BDCC9EF31E4244B900D914B4 /* lossless.c in Sources */,
 				BDCC9EF41E4244B900D914B4 /* lossless_enc.c in Sources */,
+				3B3921A422F2993700391732 /* cost_neon.c in Sources */,
 				BDCC9EF51E4244B900D914B4 /* lossless_enc_mips32.c in Sources */,
 				BDCC9EF61E4244B900D914B4 /* lossless_enc_mips_dsp_r2.c in Sources */,
 				BDCC9EF71E4244B900D914B4 /* lossless_enc_msa.c in Sources */,
@@ -1411,6 +1420,7 @@
 				FD16BB1F21E6F91A00F80360 /* WebPDecoderConfig.swift in Sources */,
 				FD8F55512177FDF500322BA2 /* WebPEncoder.swift in Sources */,
 				FD16BB1D21E6F91A00F80360 /* WebPDecoder.swift in Sources */,
+				3B3921A222F2993700391732 /* cost_neon.c in Sources */,
 				FD16BB1E21E6F91A00F80360 /* WebPDecoder+Platform.swift in Sources */,
 				FD8F554C2177FDF500322BA2 /* WebPEncoderConfig.swift in Sources */,
 				FD8F554F2177FDF500322BA2 /* InternalRawRepresentable.swift in Sources */,
@@ -1454,6 +1464,7 @@
 		BD5FC4D61DB3EE2B000A0A38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -1471,6 +1482,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1479,6 +1491,7 @@
 		BD5FC4D71DB3EE2B000A0A38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
