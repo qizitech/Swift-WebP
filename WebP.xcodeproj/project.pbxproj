@@ -948,9 +948,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD5FC4D51DB3EE2B000A0A38 /* Build configuration list for PBXNativeTarget "WebP macOS" */;
 			buildPhases = (
+				BD5FC4CD1DB3EE2B000A0A38 /* Headers */,
 				BD5FC4CB1DB3EE2B000A0A38 /* Sources */,
 				BD5FC4CC1DB3EE2B000A0A38 /* Frameworks */,
-				BD5FC4CD1DB3EE2B000A0A38 /* Headers */,
 				BD5FC4CE1DB3EE2B000A0A38 /* Resources */,
 			);
 			buildRules = (
@@ -985,10 +985,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDCC9EB51E42440000D914B4 /* Build configuration list for PBXNativeTarget "webp macOS" */;
 			buildPhases = (
+				BDCC9FC11E4246D500D914B4 /* CopyFiles */,
+				BDCC9EB21E42440000D914B4 /* Headers */,
 				BDCC9EB01E42440000D914B4 /* Sources */,
 				BDCC9EB11E42440000D914B4 /* Frameworks */,
-				BDCC9EB21E42440000D914B4 /* Headers */,
-				BDCC9FC11E4246D500D914B4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1003,10 +1003,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDCC9EC21E42445100D914B4 /* Build configuration list for PBXNativeTarget "webp iOS" */;
 			buildPhases = (
-				BDCC9EB81E42445100D914B4 /* Sources */,
-				BDCC9EB91E42445100D914B4 /* Frameworks */,
 				BDCC9EBA1E42445100D914B4 /* Copy Files */,
 				BDCC9F351E4244D700D914B4 /* Headers */,
+				BDCC9EB81E42445100D914B4 /* Sources */,
+				BDCC9EB91E42445100D914B4 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1021,9 +1021,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D95E1BF11D88D63400F94976 /* Build configuration list for PBXNativeTarget "WebP iOS" */;
 			buildPhases = (
+				D95E1BDA1D88D63300F94976 /* Headers */,
 				D95E1BD81D88D63300F94976 /* Sources */,
 				D95E1BD91D88D63300F94976 /* Frameworks */,
-				D95E1BDA1D88D63300F94976 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -1742,7 +1742,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sources/WebP";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ainam.WebP.ios;
 				PRODUCT_NAME = WebP;
@@ -1767,7 +1767,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sources/WebP";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ainam.WebP.ios;
 				PRODUCT_NAME = WebP;
